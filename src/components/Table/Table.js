@@ -1,8 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styles from './styles.scss';
 
-const Table = () => (
+const Table = props => (
   <table>
     <thead>
       <tr>
@@ -13,7 +13,7 @@ const Table = () => (
     </thead>
     <tbody>
       {
-        this.props.values.map(value => (
+        props.values.map(value => (
           <tr key={value.id}>
             <td>{value.date}</td>
             <td>{value.max}</td>
@@ -24,5 +24,9 @@ const Table = () => (
     </tbody>
   </table>
 );
+
+Table.propTypes = {
+  values: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default Table;
