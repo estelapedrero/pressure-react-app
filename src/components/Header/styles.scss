@@ -1,0 +1,12 @@
+@import "../../styles/reset";
+@import "../../styles/main";
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	background-color: $primary-color;
+	color: $white;
+}

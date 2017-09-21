@@ -1,0 +1,44 @@
+* {
+	font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+	font-family: 'Playfair Display', serif;
+}
+
+ul {
+	li {
+		display: inline-block;
+		a {
+			padding: 1em;
+		}
+	}
+}
+
+section {
+	padding: 1em;
+}
+
+button {
+	margin-top: 1em;
+	font-size: 0.9em;
+}
+
+table {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	tr {
+		height: 2.1em;
+		&:nth-child(2n){
+			background-color: $grey-lightest;
+		}
+		&:nth-child(2n+1){
+			background-color: $grey-lightest-2;
+		}
+	}
+	th {
+		background-color: $secondary-color;
+	}
+}

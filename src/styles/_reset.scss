@@ -1,0 +1,138 @@
+/* COLOURS */
+
+$primary-color: tomato;
+$secondary-color: lighten(adjust-hue($primary-color, 180), 30%);
+$dark-color:darken($primary-color, 14%);
+$light-color: lighten(adjust-hue($primary-color, -12), 45%);
+
+$success-color: #b1cf66;
+$success-dark: darken($success-color, 20%);
+$alert-color: tomato;
+
+/* GREY SCALE */
+$black: hsl(0, 0%, 0%); // hue 0-360 | saturation 0-100% | lightness 0-100%;
+$white: hsl(0, 0%, 100%); // #ffffff;
+$grey: hsl(0, 0%, 50%); // #909090;
+
+$black-opacity: rgba(0, 0, 0, 0.03);
+$white-opacity: rgba(255, 255, 255, 0.8);
+$white-modal-opacity: rgba(255, 255, 255, 0.95);
+$grey-darkest-opacity: rgba(39, 39, 39, 0.9);
+
+$grey-darkest-2: darken($grey, 40%);
+$grey-darkest: darken($grey, 30%);
+$grey-darker: darken($grey, 20%);
+$grey-dark: darken($grey, 10%);
+$grey-light: lighten($grey, 10%);
+$grey-lighter: lighten($grey, 30%);
+$grey-lightest: lighten($grey, 45%);
+$grey-lightest-2: lighten($grey, 50%);
+
+@mixin bgcolor-opacity($color, $opacity) {
+  background-color: rgba($color, $opacity);
+}
+
+/* RESET */
+
+* {
+	  margin: 0;
+  	padding: 0;
+  	font-family: 'Lato';
+    &,
+    &::before,
+    &::after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+
+ul, li {
+	margin: 0;
+	list-style: none;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover,
+a:focus {
+    outline: 0;
+    color: inherit;
+}
+
+input, select, button, .button {
+  height: 2.7em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	// border: 0;
+	border-radius: 0;
+	background-color: $white;
+	&:-moz-focusring {
+		color: transparent;
+		outline: 0;
+		text-shadow: 0 0 0 #000;
+	}
+	&:not([multiple]) {
+		background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+		background-repeat: no-repeat;
+		background-size: 1.2em auto;
+	  background-position: 97% 50%;
+	}
+}
+
+input[type=text], input[type=email], input[type=number], input[type=date], select, textarea {
+	box-shadow: none;
+	border: 1px solid $grey-lighter;
+	&:focus {
+		background-color: $white;
+  	border:1.5px solid $primary-color;
+		outline: none;
+	}
+}
+table {
+	border: none;
+}
+
+button, input[type="submit"], .button {
+	border-style: solid;
+	border-width: 0;
+	cursor: pointer;
+	text-align: center;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+	display: inline-block;
+	transition: background-color 300ms ease-out;
+	&:focus {
+	    outline: none;
+	}
+}

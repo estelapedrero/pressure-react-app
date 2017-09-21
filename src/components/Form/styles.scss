@@ -1,0 +1,28 @@
+@import "../../styles/reset";
+@import "../../styles/main";
+
+.form {
+	padding: 1em;
+	label {
+		font-size: 0.8em;
+		padding-top: 0.4em;
+		padding-bottom: 0.2em;
+	}
+	div:not(.group) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.group {
+	display: flex;
+	justify-content: space-between;
+	div {
+		width: 48%;
+	}
+}
+
+.primary {
+    background-color: $primary-color;
+    color: $white;
+}
