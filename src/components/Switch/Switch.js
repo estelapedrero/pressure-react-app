@@ -4,8 +4,9 @@ import styles from './styles.scss';
 
 class Switch extends Component {
   static propTypes = {
+    // id: PropTypes.number,
+    onChange: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.object),
-    id: PropTypes.number,
   }
 
   onRadioChange = () => (
@@ -23,7 +24,8 @@ class Switch extends Component {
               name={option.name}
               value={option.value}
               checked={option.checked}
-              onChange={this.onRadioChange}/>
+              onChange={this.onRadioChange}
+            />
             <label>{option.label}</label>
           </div>
         ))

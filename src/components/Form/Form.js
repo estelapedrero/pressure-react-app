@@ -18,7 +18,6 @@ class Form extends Component {
     };
   }
   onAddClick = () => {
-    console.log(this.state);
     this.props.addValue(this.state);
 
     // if (!this.state.date) {
@@ -33,21 +32,15 @@ class Form extends Component {
       this.onAddClick();
     }
   }
-  onDateChange = event => {
-    console.log(event);
+  onDateChange = () => {
+    // console.log(event);
   }
   onMaxChange = event => {
-    console.log(event);
-    console.log(event.target);
-
     this.setState({ max: event.target.value });
     // this.setState({ title: event.target.value });
   }
 
   onMinChange = event => {
-    console.log(event);
-    console.log(event.target);
-
     this.setState({ min: event.target.value });
     // this.setState({ title: event.target.value });
   }
@@ -88,15 +81,15 @@ class Form extends Component {
           </div>
         </div>
         <div>
-            <button
-              className={styles.primary}
-              onClick={this.onAddClick}>
-                añadir
-            </button>
+          <button
+            className={styles.primary}
+            onClick={this.onAddClick}
+          >
+            añadir
+          </button>
         </div>
       </div>
-
-    )
+    );
   }
 }
 

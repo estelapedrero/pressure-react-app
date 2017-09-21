@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Form, Header, Switch, Table } from './components';
-import styles from './App.scss';
+// import styles from './App.scss';
 
 const VIEWS = [
-  { id: 1, name: 'view',label: 'mostrar tabla', value: 'table', checked: true },
-  { id: 2, name: 'view',label: 'mostrar gráfico', value: 'graphics', checked: false },
+  { id: 1, name: 'view', label: 'mostrar tabla', value: 'table', checked: true },
+  { id: 2, name: 'view', label: 'mostrar gráfico', value: 'graphics', checked: false },
 ];
 
 class App extends Component {
+  static propTypes = {
+    id: PropTypes.number,
+  }
+
   constructor(props) {
     super(props);
 
@@ -19,6 +24,10 @@ class App extends Component {
     };
   }
 
+  onRadioToggle = () => {
+    // console.log(id);
+  }
+
   addValue = value => {
     const { date, max, min } = value;
     const values = [
@@ -28,23 +37,21 @@ class App extends Component {
     this.setState({ values });
   }
 
-  onRadioToggle = id => {
-    console.log(id);
-  }
-
   render() {
     return (
       <div>
         <Header />
         <Form
-          addValue={this.addValue} />
+          addValue={this.addValue}
+        />
         <Switch
           options={VIEWS}
           id={this.props.id}
-          onChange={this.onRadioToggle}/>
-        <Table values={this.state.values}/>
+          onChange={this.onRadioToggle}
+        />
+        <Table values={this.state.values} />
       </div>
-   );
+    );
   }
 }
 
