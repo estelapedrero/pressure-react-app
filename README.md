@@ -1,5 +1,5 @@
 # pressure-react-app
-Tracking app to save pressure blood data
+Tracking app to save pressure blood data and show it in tables and graphics
 
 # Installing the project
 
