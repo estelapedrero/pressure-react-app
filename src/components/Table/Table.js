@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DateProvider from '../../providers/date';
 // import styles from './styles.scss';
 
 const Table = props => (
@@ -15,7 +16,7 @@ const Table = props => (
       {
         props.values.map(value => (
           <tr key={value.id}>
-            <td>{value.date}</td>
+            <td>{DateProvider.short(value.date)}</td>
             <td>{value.max}</td>
             <td>{value.min}</td>
           </tr>

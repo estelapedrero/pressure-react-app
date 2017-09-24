@@ -12,17 +12,17 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      date: Date.now(),
+      date: '',
       max: 11,
       min: 5,
     };
   }
   onAddClick = () => {
     this.props.addValue(this.state);
-
-    // if (!this.state.date) {
-    //   this.state.date = Date.now();
-    // };
+    if (!this.state.date) {
+      const today = Date.now();
+      this.setState({ date: today });
+    }
     // if (!this.state.max) return;
     // if (!this.state.min) return;
   }
@@ -32,17 +32,15 @@ class Form extends Component {
       this.onAddClick();
     }
   }
-  onDateChange = () => {
-    // console.log(event);
+  onDateChange = event => {
+    this.setState({ date: event.target.value });
   }
   onMaxChange = event => {
     this.setState({ max: event.target.value });
-    // this.setState({ title: event.target.value });
   }
 
   onMinChange = event => {
     this.setState({ min: event.target.value });
-    // this.setState({ title: event.target.value });
   }
 
   render() {
@@ -53,7 +51,6 @@ class Form extends Component {
           <input
             id="date"
             type="date"
-            placeholder="fecha"
             value={this.state.date}
             onChange={this.onDateChange}
           />

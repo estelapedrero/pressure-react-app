@@ -18,8 +18,8 @@ class App extends Component {
 
     this.state = {
       values: [
-        { id: 1, date: '1505936192984', max: 11, min: 5 },
-        { id: 2, date: '1505936192984', max: 10, min: 6 },
+        { id: 1, date: Date.now(), max: 11, min: 5 },
+        { id: 2, date: Date.now(), max: 10, min: 6 },
       ],
     };
   }

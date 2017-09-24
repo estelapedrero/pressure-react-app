@@ -34,6 +34,7 @@
     "webpack-dev-server": "^2.8.2"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "prop-types": "^15.5.10"
   }
 }
