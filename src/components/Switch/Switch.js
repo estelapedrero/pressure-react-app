@@ -9,25 +9,25 @@ class Switch extends Component {
     options: PropTypes.arrayOf(PropTypes.object),
   }
 
-  onRadioChange = () => (
-    this.props.onChange()
-  )
+  onRadioChange = event => {
+    this.props.onChange(event.target.value)
+  }
 
   renderOptions = () => (
     <div className={styles.switch}>
       {
         this.props.options.map(option => (
-          <div key={option.id}>
+          <label key={option.id}>
             <input
               type="radio"
               id={option.id}
               name={option.name}
               value={option.value}
-              checked={option.checked}
+              checked={this.props.selectedOption === option.value}
               onChange={this.onRadioChange}
             />
-            <label>{option.label}</label>
-          </div>
+            {option.label}
+          </label>
         ))
       }
     </div>

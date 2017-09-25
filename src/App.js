@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Header, Switch, Table } from './components';
+import { Form, Graphic, Header, Switch, Table } from './components';
 // import styles from './App.scss';
 
 const VIEWS = [
-  { id: 1, name: 'view', label: 'mostrar tabla', value: 'table', checked: true },
-  { id: 2, name: 'view', label: 'mostrar gráfico', value: 'graphics', checked: false },
+  { id: 1, name: 'view', label: 'mostrar tabla', value: 'table' },
+  { id: 2, name: 'view', label: 'mostrar gráfico', value: 'graphics' },
 ];
 
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      selectedOption: 'table',
       values: [
         { id: 1, date: Date.now(), max: 11, min: 5 },
         { id: 2, date: Date.now(), max: 10, min: 6 },
@@ -24,8 +25,10 @@ class App extends Component {
     };
   }
 
-  onRadioToggle = () => {
-    // console.log(id);
+  onRadioToggle = value => {
+    this.setState({
+    	selectedOption: value
+		});
   }
 
   addValue = value => {
@@ -47,9 +50,11 @@ class App extends Component {
         <Switch
           options={VIEWS}
           id={this.props.id}
+          selectedOption={this.state.selectedOption}
           onChange={this.onRadioToggle}
         />
         <Table values={this.state.values} />
+        <Graphic />
       </div>
     );
   }

@@ -4,14 +4,17 @@
 .switch {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	div {
-		display: flex;
-		align-items: center;
+	input[type="radio"] {
+		margin-right: 0.5em;
+		vertical-align: middle;
 	}
-	label {
-		margin-left: 0.5em;
-		margin-right: 1em;
+	label{
+		cursor: pointer;
+		&:not(:last-child){
+			padding-right: 1em;
+		}
 	}
 }

@@ -1,9 +1,9 @@
 /* COLOURS */
 
 $primary-color: tomato;
-$secondary-color: lighten(adjust-hue($primary-color, 180), 30%);
+$secondary-color: darken(adjust-hue($primary-color, 170), 20%);
 $dark-color:darken($primary-color, 14%);
-$light-color: lighten(adjust-hue($primary-color, -12), 45%);
+$light-color: lighten(adjust-hue($primary-color, 25), 10%);
 
 $success-color: #b1cf66;
 $success-dark: darken($success-color, 20%);
@@ -30,6 +30,10 @@ $grey-lightest-2: lighten($grey, 50%);
 
 @mixin bgcolor-opacity($color, $opacity) {
   background-color: rgba($color, $opacity);
+}
+
+@mixin linear-gradient($direction, $color-1, $color-2) {
+  background: linear-gradient($direction, $color-1, $color-2);
 }
 
 /* RESET */
