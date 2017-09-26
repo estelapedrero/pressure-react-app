@@ -7,10 +7,11 @@ class Switch extends Component {
     // id: PropTypes.number,
     onChange: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.object),
+    selectedOption: PropTypes.string,
   }
 
   onRadioChange = event => {
-    this.props.onChange(event.target.value)
+    this.props.onChange(event.target.value);
   }
 
   renderOptions = () => (
@@ -26,7 +27,6 @@ class Switch extends Component {
               checked={this.props.selectedOption === option.value}
               onChange={this.onRadioChange}
             />
-            {option.label}
           </label>
         ))
       }

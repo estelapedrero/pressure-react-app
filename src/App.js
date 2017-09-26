@@ -5,7 +5,7 @@ import { Form, Graphic, Header, Switch, Table } from './components';
 
 const VIEWS = [
   { id: 1, name: 'view', label: 'mostrar tabla', value: 'table' },
-  { id: 2, name: 'view', label: 'mostrar gráfico', value: 'graphics' },
+  { id: 2, name: 'view', label: 'mostrar gráfico', value: 'graphic' },
 ];
 
 class App extends Component {
@@ -26,9 +26,7 @@ class App extends Component {
   }
 
   onRadioToggle = value => {
-    this.setState({
-    	selectedOption: value
-		});
+    this.setState({ selectedOption: value });
   }
 
   addValue = value => {
@@ -53,8 +51,12 @@ class App extends Component {
           selectedOption={this.state.selectedOption}
           onChange={this.onRadioToggle}
         />
-        <Table values={this.state.values} />
-        <Graphic />
+        {this.state.selectedOption === 'table' ?
+          <Table values={this.state.values} /> : null}
+
+        {this.state.selectedOption === 'graphic' ?
+          <Graphic /> : null}
+
       </div>
     );
   }
