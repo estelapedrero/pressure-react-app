@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import DateProvider from '../../providers/date';
 import styles from './styles.scss';
 
 const ENTER_KEYCODE = 13;
@@ -12,20 +13,18 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      date: '',
+      date: Date.now(),
       max: 11,
       min: 5,
       pulse: 87,
     };
   }
   onAddClick = () => {
+    if (!this.state.date) return;
+    if (!this.state.pulse) return;
+    if (!this.state.max) return;
+    if (!this.state.min) return;
     this.props.addValue(this.state);
-    if (!this.state.date) {
-      const today = Date.now();
-      this.setState({ date: today });
-    }
-    // if (!this.state.max) return;
-    // if (!this.state.min) return;
   }
 
   onInputKeyDown = event => {
