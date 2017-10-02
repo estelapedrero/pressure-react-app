@@ -34,7 +34,9 @@
     "webpack-dev-server": "^2.8.2"
   },
   "dependencies": {
+    "chart.js": "^2.7.0",
     "moment": "^2.18.1",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "react-d3": "^0.4.0"
   }
 }

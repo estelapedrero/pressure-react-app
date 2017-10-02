@@ -19,8 +19,8 @@ class App extends Component {
     this.state = {
       selectedOption: 'table',
       values: [
-        { id: 1, date: Date.now(), max: 11, min: 5 },
-        { id: 2, date: Date.now(), max: 10, min: 6 },
+        { id: 1, date: Date.now(), pulse: 75, max: 11, min: 5 },
+        { id: 2, date: Date.now(), pulse: 58, max: 10, min: 6 },
       ],
     };
   }
@@ -30,11 +30,18 @@ class App extends Component {
   }
 
   addValue = value => {
-    const { date, max, min } = value;
+    const { date, pulse, max, min } = value;
     const values = [
       ...this.state.values,
-      { id: Date.now(), date, max, min },
+      { id: Date.now(), date, pulse, max, min },
     ];
+    this.setState({ values });
+  }
+
+  clickXClose = id => {
+    // console.log(id);
+    const values = this.state.values.filter(value => value.id !== id);
+
     this.setState({ values });
   }
 
@@ -52,10 +59,15 @@ class App extends Component {
           onChange={this.onRadioToggle}
         />
         {this.state.selectedOption === 'table' ?
-          <Table values={this.state.values} /> : null}
+          <Table
+            clickClose={this.clickXClose}
+            values={this.state.values}
+          /> : null}
 
         {this.state.selectedOption === 'graphic' ?
-          <Graphic /> : null}
+          <Graphic
+            chartData={this.state.values}
+          /> : null}
 
       </div>
     );

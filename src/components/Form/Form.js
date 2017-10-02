@@ -15,6 +15,7 @@ class Form extends Component {
       date: '',
       max: 11,
       min: 5,
+      pulse: 87,
     };
   }
   onAddClick = () => {
@@ -43,6 +44,10 @@ class Form extends Component {
     this.setState({ min: event.target.value });
   }
 
+  onPulseChange = event => {
+    this.setState({ pulse: event.target.value });
+  }
+
   render() {
     return (
       <div className={styles.form}>
@@ -57,7 +62,17 @@ class Form extends Component {
         </div>
         <div className={styles.group}>
           <div>
-            <label>máximo</label>
+            <label>pulsaciones</label>
+            <input
+              type="number"
+              placeholder="pulsaciones"
+              step="1"
+              value={this.state.pulse}
+              onChange={this.onPulseChange}
+            />
+          </div>
+          <div>
+            <label>mínimo</label>
             <input
               type="number"
               placeholder="máximo"
