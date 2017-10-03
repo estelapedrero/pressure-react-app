@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Graphic, Header, Switch, Table } from './components';
-// import styles from './App.scss';
+import styles from './App.scss';
 
 const VIEWS = [
   { id: 1, name: 'view', label: 'tabla', value: 'table' },
@@ -56,17 +56,17 @@ class App extends Component {
           selectedOption={this.state.selectedOption}
           onChange={this.onRadioToggle}
         />
-        {this.state.selectedOption === 'table' ?
+        {this.state.selectedOption === 'table' && this.state.values.length > 0 ?
           <Table
             clickClose={this.clickXClose}
             values={this.state.values}
           /> : null}
 
-        {this.state.selectedOption === 'graphic' ?
+        {this.state.selectedOption === 'graphic' && this.state.values.length > 0 ?
           <Graphic
             chartData={this.state.values}
           /> : null}
-
+        {this.state.values.length <= 0 ? <p className={styles.info}>No hay datos</p> : null}
       </div>
     );
   }
