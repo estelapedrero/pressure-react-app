@@ -5,9 +5,8 @@ import styles from './styles.scss';
 
 class Table extends Component {
 
-  onClickX = () => {
-    // console.log(event.target.parentNode.parentNode);
-    this.props.clickClose(this.props.id);
+  onClickX = id => {
+    this.props.clickClose(id);
   }
 
   render() {
@@ -30,7 +29,7 @@ class Table extends Component {
                 <td>{value.max}</td>
                 <td>{value.min}</td>
                 <td className={styles['x-close']}>
-                  <a onClick={this.onClickX}>x</a>
+                  <a id={value.id} onClick={this.onClickX.bind(null, value.id)}>x</a>
                 </td>
               </tr>
             ))
@@ -43,7 +42,6 @@ class Table extends Component {
 
 Table.propTypes = {
   clickClose: PropTypes.func,
-  id: PropTypes.number,
   values: PropTypes.arrayOf(PropTypes.object),
 };
 

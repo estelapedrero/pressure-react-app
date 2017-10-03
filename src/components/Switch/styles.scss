@@ -1,82 +1,60 @@
 @import "../../styles/reset";
 @import "../../styles/main";
 
-// .switch {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	margin-top: 1em;
-// 	margin-bottom: 1em;
-// 	input[type="radio"] {
-// 		margin-right: 0.5em;
-// 		vertical-align: middle;
-// 	}
-// 	label{
-// 		cursor: pointer;
-// 		&:not(:last-child){
-// 			padding-right: 1em;
-// 		}
-// 	}
-// }
-
 .switch {
-	margin: 0 auto 1em;
-	background-color: $grey-lightest;
-	width: 4em;
-	height: 2.4em;
-	border: 2px solid $grey-lighter;
-	border-radius: 40px;
+	margin-bottom: 1em;
 	display: flex;
 	align-items: center;
-	position: relative;
+	justify-content: center;
+	&::before {
+		content: '';
+    height: 2.2em;
+    border-radius: 20px;
+    width: 4.2em;
+    background-color: $grey-lightest;
+		border: 2px solid $grey-lighter;
+    position: absolute;
+    left: 50%;
+		transform: translateX(-50%);
+	}
 	label {
-		font-size: 1em;
+		position: relative;
 		height: 2em;
+		width: 100%;
+    padding: 0 2.4em;
 		line-height: 2em;
-		padding: 0 3em;
-		position: absolute;
 		text-transform: uppercase;
 		transition: all 1s ease;
-		width: 100%;
 		cursor: pointer;
-		&:nth-child(2n+1){
-			right: 4em;
-			&:before {
-				content: 'tabla';
-			}
+		&:nth-child(2n+1) {
+			text-align: right;
 			input:checked {
-				right: -2.35em;
+				right: -3px;
 			}
 		}
-		&:nth-child(2n){
-			left: 1.2em;
-			&:before {
-				content: 'grafico';
-			}
+		&:nth-child(2n) {
+			text-align: left;
 			input:checked {
-				left: 0.5em;
+				left: 0;
 			}
 		}
 	}
 	input {
 		position: absolute;
+		top: 1.5px;
 		opacity: 0;
 		font-size: 1em;
-		top: 0;
-		height: inherit;
-    display: flex;
-    justify-content: center;
+		height: 1.8em;
     width: 2em;
 		&:checked {
 			opacity: 1;
-			top: 0;
 		}
-    &:checked:before{
+    &:checked::before {
       background-color: $primary-color;
       content: '';
 			display: inline-block;
-			height: 2em;
-			width: 2em;
+			height: 1.8em;
+			width: 1.8em;
 			border-radius: 50%;
     }
 	}

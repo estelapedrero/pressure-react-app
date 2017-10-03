@@ -14,28 +14,29 @@ class Switch extends Component {
     this.props.onChange(event.target.value);
   }
 
-  renderOptions = () => (
-    <div className={styles.switch}>
-      {
-        this.props.options.map(option => (
-          <label key={option.id}>
-            <input
-              type="radio"
-              id={option.id}
-              name={option.name}
-              value={option.value}
-              checked={this.props.selectedOption === option.value}
-              onChange={this.onRadioChange}
-            />
-          </label>
-        ))
-      }
-    </div>
-  )
+  renderOptions = () => {
+    const { options, selectedOption } = this.props;
+
+    return options.map(({ id, name, value, label }) => (
+      <label key={id}>
+        {label}
+        <input
+          type="radio"
+          id={id}
+          name={name}
+          value={value}
+          checked={selectedOption === value}
+          onChange={this.onRadioChange}
+        />
+      </label>
+    ));
+  }
 
   render() {
     return (
-      this.renderOptions()
+      <div className={styles.switch}>
+        { this.renderOptions() }
+      </div>
     );
   }
 }

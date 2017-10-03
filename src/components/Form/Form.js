@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import DateProvider from '../../providers/date';
 import styles from './styles.scss';
 
 const ENTER_KEYCODE = 13;
@@ -32,19 +31,8 @@ class Form extends Component {
       this.onAddClick();
     }
   }
-  onDateChange = event => {
-    this.setState({ date: event.target.value });
-  }
-  onMaxChange = event => {
-    this.setState({ max: event.target.value });
-  }
-
-  onMinChange = event => {
-    this.setState({ min: event.target.value });
-  }
-
-  onPulseChange = event => {
-    this.setState({ pulse: event.target.value });
+  onInputChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   render() {
@@ -53,10 +41,11 @@ class Form extends Component {
         <div>
           <label>fecha</label>
           <input
+            name="date"
             id="date"
             type="date"
             value={this.state.date}
-            onChange={this.onDateChange}
+            onChange={this.onInputChange}
           />
         </div>
         <div className={styles.group}>
@@ -64,30 +53,33 @@ class Form extends Component {
             <label>pulsaciones</label>
             <input
               type="number"
+              name="pulse"
               placeholder="pulsaciones"
               step="1"
               value={this.state.pulse}
-              onChange={this.onPulseChange}
+              onChange={this.onInputChange}
             />
           </div>
           <div>
             <label>mínimo</label>
             <input
               type="number"
+              name="max"
               placeholder="máximo"
               step="0.1"
               value={this.state.max}
-              onChange={this.onMaxChange}
+              onChange={this.onInputChange}
             />
           </div>
           <div>
             <label>mínimo</label>
             <input
               type="number"
+              name="min"
               placeholder="mínimo"
               step="0.1"
               value={this.state.min}
-              onChange={this.onMinChange}
+              onChange={this.onInputChange}
             />
           </div>
         </div>

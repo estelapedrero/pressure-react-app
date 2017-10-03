@@ -4,8 +4,8 @@ import { Form, Graphic, Header, Switch, Table } from './components';
 // import styles from './App.scss';
 
 const VIEWS = [
-  { id: 1, name: 'view', label: 'mostrar tabla', value: 'table' },
-  { id: 2, name: 'view', label: 'mostrar gráfico', value: 'graphic' },
+  { id: 1, name: 'view', label: 'tabla', value: 'table' },
+  { id: 2, name: 'view', label: 'gráfico', value: 'graphic' },
 ];
 
 class App extends Component {
@@ -39,9 +39,7 @@ class App extends Component {
   }
 
   clickXClose = id => {
-    // console.log(id);
     const values = this.state.values.filter(value => value.id !== id);
-
     this.setState({ values });
   }
 
