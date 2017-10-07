@@ -1,42 +1,6 @@
-/* COLOURS */
-
-$primary-color: tomato;
-$secondary-color: darken(adjust-hue($primary-color, 170), 20%);
-$dark-color:darken($primary-color, 14%);
-$light-color: lighten(adjust-hue($primary-color, 25), 10%);
-
-$success-color: #b1cf66;
-$success-dark: darken($success-color, 20%);
-$alert-color: tomato;
-
-/* GREY SCALE */
-$black: hsl(0, 0%, 0%); // hue 0-360 | saturation 0-100% | lightness 0-100%;
-$white: hsl(0, 0%, 100%); // #ffffff;
-$grey: hsl(0, 0%, 50%); // #909090;
-
-$black-opacity: rgba(0, 0, 0, 0.03);
-$white-opacity: rgba(255, 255, 255, 0.8);
-$white-modal-opacity: rgba(255, 255, 255, 0.95);
-$grey-darkest-opacity: rgba(39, 39, 39, 0.9);
-
-$grey-darkest-2: darken($grey, 40%);
-$grey-darkest: darken($grey, 30%);
-$grey-darker: darken($grey, 20%);
-$grey-dark: darken($grey, 10%);
-$grey-light: lighten($grey, 10%);
-$grey-lighter: lighten($grey, 30%);
-$grey-lightest: lighten($grey, 45%);
-$grey-lightest-2: lighten($grey, 50%);
-
-@mixin bgcolor-opacity($color, $opacity) {
-  background-color: rgba($color, $opacity);
-}
-
-@mixin linear-gradient($direction, $color-1, $color-2) {
-  background: linear-gradient($direction, $color-1, $color-2);
-}
-
 /* RESET */
+
+@import "variables";
 
 * {
 	  margin: 0;
@@ -86,8 +50,15 @@ a:focus {
     color: inherit;
 }
 
-input, select, button, .button {
+input, select {
+  height: 3.3em;
+}
+
+button, .button {
   height: 2.7em;
+}
+
+input, select, button, .button {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }

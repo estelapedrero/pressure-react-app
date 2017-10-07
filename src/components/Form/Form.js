@@ -61,7 +61,7 @@ class Form extends Component {
             />
           </div>
           <div>
-            <label>mínimo</label>
+            <label>máximo</label>
             <input
               type="number"
               name="max"

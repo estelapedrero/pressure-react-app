@@ -10,7 +10,7 @@ ul {
 	li {
 		display: inline-block;
 		a {
-			padding: 1em;
+			padding: 0.5em;
 		}
 	}
 }
@@ -21,7 +21,7 @@ section {
 
 button {
 	margin-top: 1em;
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 table {
@@ -32,10 +32,10 @@ table {
 	tr {
 		height: 2.1em;
 		&:nth-child(2n){
-			background-color: $grey-lightest;
+			background-color: $grey-lighter;
 		}
 		&:nth-child(2n+1){
-			background-color: $grey-lightest-2;
+			background-color: $grey-lightest;
 		}
 	}
 	th {
@@ -49,4 +49,15 @@ table {
 	font-style: italic;
 	margin-top: 2em;
 	font-size: 1.2em;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+.main {
+	flex: 1;
 }

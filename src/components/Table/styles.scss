@@ -1,5 +1,4 @@
-@import "../../styles/reset";
-@import "../../styles/main";
+@import "../../styles/variables";
 
 .x-close {
   background-color: $white;
@@ -7,10 +6,12 @@
   border: 1px solid $light-color;
   font-size: 1.2em;
   line-height: 1.2em;
-  padding: 0 .3em;
   cursor: pointer;
   &:hover{
     background-color: $light-color;
     color: $white;
+  }
+  a{
+    padding: 0 .3em;
   }
 }

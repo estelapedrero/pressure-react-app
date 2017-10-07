@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Graphic, Header, Switch, Table } from './components';
+import { Footer, Form, Graphic, Header, Switch, Table } from './components';
 import styles from './App.scss';
 
 const VIEWS = [
@@ -45,28 +45,32 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         <Header />
-        <Form
-          addValue={this.addValue}
-        />
-        <Switch
-          options={VIEWS}
-          id={this.props.id}
-          selectedOption={this.state.selectedOption}
-          onChange={this.onRadioToggle}
-        />
-        {this.state.selectedOption === 'table' && this.state.values.length > 0 ?
-          <Table
-            clickClose={this.clickXClose}
-            values={this.state.values}
-          /> : null}
+        <div className={styles.main}>
+          <Form
+            addValue={this.addValue}
+          />
+          <Switch
+            options={VIEWS}
+            id={this.props.id}
+            selectedOption={this.state.selectedOption}
+            onChange={this.onRadioToggle}
+          />
+          {this.state.selectedOption === 'table' && this.state.values.length > 0 ?
+            <Table
+              clickClose={this.clickXClose}
+              values={this.state.values}
+            /> : null}
 
-        {this.state.selectedOption === 'graphic' && this.state.values.length > 0 ?
-          <Graphic
-            chartData={this.state.values}
-          /> : null}
-        {this.state.values.length <= 0 ? <p className={styles.info}>No hay datos</p> : null}
+          {this.state.selectedOption === 'graphic' && this.state.values.length > 0 ?
+            <Graphic
+              chartData={this.state.values}
+            /> : null}
+          {this.state.values.length <= 0 ? <p className={styles.info}>No hay datos</p> : null}
+
+        </div>
+        <Footer />
       </div>
     );
   }

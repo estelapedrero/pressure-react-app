@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: $grey-darker;
+  color: $white;
+  a {
+    padding: 0;
+    color: $grey;
+    &:hover {
+      color: $white;
+      font-weight: 900;
+    }
+  }
+}

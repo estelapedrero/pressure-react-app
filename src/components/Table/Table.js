@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import DateProvider from '../../providers/date';
 import styles from './styles.scss';
 
+const HEADER = ['fecha', 'pulsaciones', 'máximo', 'mínimo']
+
 class Table extends Component {
 
   onClickX = id => {
@@ -14,10 +16,11 @@ class Table extends Component {
       <table>
         <thead>
           <tr>
-            <th>fecha</th>
-            <th>pulsaciones</th>
-            <th>máximo</th>
-            <th>mínimo</th>
+            {
+              HEADER.map((title, index) => (
+                <th key={index}>{title}</th>
+              ))
+            }
           </tr>
         </thead>
         <tbody>

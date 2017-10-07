@@ -16,6 +16,9 @@ const OPTIONS = {
   },
 };
 
+Chart.defaults.global.legend.position = 'bottom';
+Chart.defaults.global.legend.labels.boxWidth = 1;
+
 class Graphic extends Component {
 
   constructor(props) {
