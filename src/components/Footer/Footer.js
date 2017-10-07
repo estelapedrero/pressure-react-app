@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from '../Icon';
 import Link from '../Link';
 import styles from './styles.scss';
 
@@ -10,7 +11,7 @@ const rrss = [
 
 const Footer = () => (
   <footer className={styles.footer}>
-    <p>made with <i>*</i> by estelapedrero</p>
+    <p>made with <Icon name="zap" /> by estelapedrero</p>
     <ul>
       {rrss.map((link, index) => <li key={index}> <Link name={link.name} link={link.link} /></li>) }
     </ul>

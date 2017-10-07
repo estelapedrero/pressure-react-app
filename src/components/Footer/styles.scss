@@ -6,6 +6,10 @@
   padding: 1em;
   background-color: $grey-darker;
   color: $white;
+  p {
+    display: flex;
+    align-items: center;
+  }
   a {
     padding: 0;
     color: $grey;
