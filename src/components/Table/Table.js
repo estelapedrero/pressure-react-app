@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DateProvider from '../../providers/date';
 import styles from './styles.scss';
 
-const HEADER = ['fecha', 'pulsaciones', 'máximo', 'mínimo']
+const HEADER = ['fecha', 'pulsaciones', 'systólica', 'diastólica']
 
 class Table extends Component {
 
@@ -29,8 +29,8 @@ class Table extends Component {
               <tr key={value.id}>
                 <td>{DateProvider.short(value.date)}</td>
                 <td>{value.pulse}</td>
-                <td>{value.max}</td>
-                <td>{value.min}</td>
+                <td className={(value.sys > 135 ? styles.alert : null)}>{value.sys}</td>
+                <td className={(value.dia > 85 ? styles.alert : null)}>{value.dia}</td>
                 <td className={styles['x-close']}>
                   <a id={value.id} onClick={this.onClickX.bind(null, value.id)}>x</a>
                 </td>

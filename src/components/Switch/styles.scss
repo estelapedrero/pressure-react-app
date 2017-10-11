@@ -1,61 +1,95 @@
 @import "../../styles/variables";
 
-.switch {
-	margin-top: 0.5em;
-	margin-bottom: 1.5em;
+
+.tabmenu {
+	color: $grey-dark;
+	text-transform: uppercase;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	&::before {
-		content: '';
-    height: 2.2em;
-    border-radius: 20px;
-    width: 4.2em;
-    background-color: $grey-lightest;
-		border: 2px solid $grey-lighter;
-    position: absolute;
-    left: 50%;
-		transform: translateX(-50%);
-	}
+	text-align: center;
+	margin-bottom: 2em;
+	height: 3em;
+	font-size: 0.9em;
+	letter-spacing: 0.5px;
+	padding-right: 1em;
+	padding-left: 1em;
 	label {
-		position: relative;
-		height: 2em;
 		width: 100%;
-    padding: 0 2.4em;
-		line-height: 2em;
-		text-transform: uppercase;
-		transition: all 1s ease;
-		cursor: pointer;
-		&:nth-child(2n+1) {
-			text-align: right;
-			input:checked {
-				right: -3px;
-			}
-		}
-		&:nth-child(2n) {
-			text-align: left;
-			input:checked {
-				left: 0;
-			}
-		}
+		display: flex;
+		align-items: center;
 	}
-	input {
-		position: absolute;
-		top: 1.5px;
+	p {
+    width: inherit;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    line-height: 3em;
+		transition: all 0.7s ease;
+	}
+	input{
 		opacity: 0;
-		font-size: 1em;
-		height: 1.8em;
-    width: 2em;
-		&:checked {
-			opacity: 1;
-		}
-    &:checked::before {
-      background-color: $primary-color;
-      content: '';
-			display: inline-block;
-			height: 1.8em;
-			width: 1.8em;
-			border-radius: 50%;
-    }
+		position: absolute;
+	}
+	input:checked+p{
+		border-bottom: 4px solid $primary-color;
+		font-weight: 900;
 	}
 }
+
+// .switch {
+// 	margin-top: 0.5em;
+// 	margin-bottom: 1.5em;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	&::before {
+// 		content: '';
+//     height: 2.2em;
+//     border-radius: 20px;
+//     width: 4.2em;
+//     background-color: $grey-lightest;
+// 		border: 2px solid $grey-lighter;
+//     position: absolute;
+//     left: 50%;
+// 		transform: translateX(-50%);
+// 	}
+// 	label {
+// 		position: relative;
+// 		height: 2em;
+// 		width: 100%;
+//     padding: 0 2.4em;
+// 		line-height: 2em;
+// 		text-transform: uppercase;
+// 		transition: all 1s ease;
+// 		cursor: pointer;
+// 		&:nth-child(2n+1) {
+// 			text-align: right;
+// 			input:checked {
+// 				right: -3px;
+// 			}
+// 		}
+// 		&:nth-child(2n) {
+// 			text-align: left;
+// 			input:checked {
+// 				left: 0;
+// 			}
+// 		}
+// 	}
+// 	input {
+// 		position: absolute;
+// 		top: 1.5px;
+// 		opacity: 0;
+// 		font-size: 1em;
+// 		height: 1.8em;
+//     width: 2em;
+// 		&:checked {
+// 			opacity: 1;
+// 		}
+//     &:checked::before {
+//       background-color: $primary-color;
+//       content: '';
+// 			display: inline-block;
+// 			height: 1.8em;
+// 			width: 1.8em;
+// 			border-radius: 50%;
+//     }
+// 	}
+// }

@@ -13,16 +13,16 @@ class Form extends Component {
 
     this.state = {
       date: Date.now(),
-      max: 11,
-      min: 5,
+      sys: 111,
+      dia: 75,
       pulse: 87,
     };
   }
   onAddClick = () => {
     if (!this.state.date) return;
     if (!this.state.pulse) return;
-    if (!this.state.max) return;
-    if (!this.state.min) return;
+    if (!this.state.sys) return;
+    if (!this.state.dia) return;
     this.props.addValue(this.state);
   }
 
@@ -61,24 +61,24 @@ class Form extends Component {
             />
           </div>
           <div>
-            <label>máximo</label>
+            <label>systólica</label>
             <input
               type="number"
-              name="max"
-              placeholder="máximo"
-              step="0.1"
-              value={this.state.max}
+              name="sys"
+              placeholder="systólica"
+              step="1"
+              value={this.state.sys}
               onChange={this.onInputChange}
             />
           </div>
           <div>
-            <label>mínimo</label>
+            <label>diástolica</label>
             <input
               type="number"
-              name="min"
-              placeholder="mínimo"
-              step="0.1"
-              value={this.state.min}
+              name="dia"
+              placeholder="diastólica"
+              step="1"
+              value={this.state.dia}
               onChange={this.onInputChange}
             />
           </div>

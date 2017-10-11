@@ -19,7 +19,6 @@ class Switch extends Component {
 
     return options.map(({ id, name, value, label }) => (
       <label key={id}>
-        {label}
         <input
           type="radio"
           id={id}
@@ -28,13 +27,14 @@ class Switch extends Component {
           checked={selectedOption === value}
           onChange={this.onRadioChange}
         />
+        <p>{label}</p>
       </label>
     ));
   }
 
   render() {
     return (
-      <div className={styles.switch}>
+      <div className={styles.tabmenu}>
         { this.renderOptions() }
       </div>
     );

@@ -39,15 +39,15 @@ class Graphic extends Component {
   )
 
   getMax = () => ({
-    label: 'max',
-    data: this.props.chartData.map(value => value.max),
+    label: 'sys',
+    data: this.props.chartData.map(value => value.sys),
     backgroundColor: 'rgba(255, 255, 255, 0)',
     borderColor: 'tomato',
   })
 
   getMin = () => ({
-    label: 'min',
-    data: this.props.chartData.map(value => value.min),
+    label: 'dia',
+    data: this.props.chartData.map(value => value.dia),
     backgroundColor: 'rgba(255, 255, 255, 0)',
     borderColor: '#00e0dd',
   })
